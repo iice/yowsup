@@ -72,7 +72,7 @@ class AxolotlSendLayer(AxolotlBaseLayer):
                     logger.debug("Axolotl layer does not have the message, bubbling it upwards")
                     self.toUpper(protocolTreeNode)
                 elif protocolTreeNode["type"] == "retry":
-                    logger.info("Got retry to for message %s, and Axolotl layer has the message" % protocolTreeNode["id"])
+                    logger.debug("Got retry to for message %s, and Axolotl layer has the message" % protocolTreeNode["id"])
                     retryReceiptEntity = RetryIncomingReceiptProtocolEntity.fromProtocolTreeNode(protocolTreeNode)
                     self.toLower(retryReceiptEntity.ack().toProtocolTreeNode())
                     self.getKeysFor(

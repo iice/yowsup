@@ -20,7 +20,7 @@ class TextMessageProtocolEntity(MessageProtocolEntity):
         return out
 
     def setBody(self, body):
-        self.body = body
+        self.body = body.replace("\\n", "\n")
 
     def getBody(self):
         return self.body
